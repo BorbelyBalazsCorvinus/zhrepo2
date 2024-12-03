@@ -1,19 +1,19 @@
 trigger:
- -main
+ - main
 
 pool:
  vmImage: 'ubuntu-latest'
 
 steps:
- -task:UsePythonVersion@0
+ - task:UsePythonVersion@0
  inputs:
   versionSpec: '3.x'
   addToPath: true
- -script: |
+ - script: |
     pyton -m pip install --upgrade pip
     pip install pytest
   displayName 'Install dependencies'
 
- -script: |
+ - script: |
  pytest
 displayName: 'Run tests'
